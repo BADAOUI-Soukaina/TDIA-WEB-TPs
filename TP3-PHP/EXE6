@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résolution d'équations du second degré</title>
+</head>
+<body>
+    <h2>Résolution d'équations du second degré</h2>
+    <form method="post">
+        <label for="a">Coefficient a:</label>
+        <input type="number" name="a" id="a" required><br>
+        <label for="b">Coefficient b:</label>
+        <input type="number" name="b" id="b" required><br>
+        <label for="c">Coefficient c:</label>
+        <input type="number" name="c" id="c" required><br>
+        <input type="submit" name="submit" value="Calculer">
+    </form>
+    <?php
+    if (isset($_POST['submit'])) {
+        $a = $_POST['a'];
+        $b = $_POST['b'];
+        $c = $_POST['c'];
+
+        // Calcul du discriminant
+        $delta = $b * $b - 4 * $a * $c;
+
+        // Si le discriminant est positif
+        if ($delta > 0) {
+            $x1 = (-$b + sqrt($delta)) / (2 * $a);
+            $x2 = (-$b - sqrt($delta)) / (2 * $a);
+            echo "Les solutions sont : x1 = $x1 et x2 = $x2";
+        }
+        // Si le discriminant est nul
+        elseif ($delta == 0) {
+            $x = -$b / (2 * $a);
+            echo "La solution double est : x = $x";
+        }
+        // Si le discriminant est négatif
+        else {
+            echo "L'équation n'a pas de solution réelle";
+        }
+    }
+    ?>
+</body>
+</html>
