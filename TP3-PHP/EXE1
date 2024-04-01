@@ -1,0 +1,23 @@
+<?php
+// Fonction pour vérifier si un nombre est un nombre d'Armstrong
+function isArmstrong($num) {
+    $sum = 0;
+    $temp = $num;
+    while ($temp != 0) {
+        $digit = $temp % 10;
+        $sum += $digit ** 3;
+        $temp = intval($temp / 10);
+    }
+    return $sum == $num;
+}
+
+// Affichage des nombres d'Armstrong inférieurs à 1000
+echo "Nombres d'Armstrong inférieurs à 1000 :<br>";
+echo "<ul>";
+for ($i = 0; $i < 1000; $i++) {
+    if (isArmstrong($i)) {
+        echo "<li>$i</li>";
+    }
+}
+echo "</ul>";
+?>
