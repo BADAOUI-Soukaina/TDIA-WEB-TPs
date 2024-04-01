@@ -1,0 +1,15 @@
+<?php
+// Fonction pour vérifier si un nombre est pair
+function isEven($num) {
+    return $num % 2 == 0;
+}
+
+// Tant que la suite n'est pas composée de deux nombres pairs suivis d'un nombre impair
+do {
+    $num1 = rand(1, 100);
+    $num2 = rand(1, 100);
+    $num3 = rand(1, 100);
+} while (!(isEven($num1) && isEven($num2) && !isEven($num3)));
+
+echo "Suite obtenue : $num1, $num2, $num3";
+?>
