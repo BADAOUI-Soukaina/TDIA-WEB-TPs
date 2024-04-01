@@ -1,0 +1,17 @@
+<?php
+// Génération du nombre initial
+$N = rand(100, 999);
+$tries = 0;
+
+// Tant que le nombre généré n'est pas égal à N
+while (true) {
+    $tries++;
+    $random = rand(100, 999);
+    if ($random == $N) {
+        break;
+    }
+}
+
+echo "Nombre généré : $N<br>";
+echo "Nombre d'essais : $tries";
+?>
